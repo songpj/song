@@ -1,7 +1,7 @@
 /**
  * Created by song on 2015/1/19.
  */
-var ngSoong = angular.module('ngSoong', ['ngRoute', 'ngDirective']);
+var ngSoong = angular.module('ngSoong', ['ngRoute', 'ngDirective','ngService']);
 
 ngSoong.config(function($routeProvider, $httpProvider){
     $routeProvider
@@ -17,6 +17,8 @@ ngSoong.run(['$rootScope', function($rootScope){
 }]);
 
 function BaseCtrl($scope, $printInfo){
-	$printInfo.print('hello world',{color: pink;});
+	//$printInfo.print({name: 'this is my name', gender: 'male', other: {address: 'nanking', tel:'911'}},{color: 'pink'});
+	//$printInfo.print('sdfdsfsdf',{color: 'pink'});
+	$printInfo.print({test:{sdf:2323, sdfdsf:909090},name: 'this is my name', gender: 'male', other: {address: 'nanking', tel:'911'}},{color: 'pink'});
 }
 
