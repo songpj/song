@@ -9,10 +9,11 @@ ngService.factory('$printInfo', function(){
 		var infoWrapperId = 'printInfoWrapperBySoong';
 		var	defaultStyle = 'display:block;position:fixed;right:5px;top:10px;border:2px solid green;height:auto;text-align:left;z-index:999;padding:10px;',
 			humanStyle = '#printInfoWrapperBySoong{background-color: #fff;}'
-	+ '#printInfoWrapperBySoong ul{margin-left:1em;margin-bottom:2px;border-width:0 0 0px 1px;border-style:dashed;margin-left:0;}'
-	+ '#printInfoWrapperBySoong > ul{border-bottom-width: 1px;}'
-	+ '#printInfoWrapperBySoong ul li{padding-left:12px;position:relative;}'
-	+ '#printInfoWrapperBySoong ul li:before{content:"...";position:absolute;left:0;line-height: 15px;}' ;
+	+ '#printInfoWrapperBySoong ul{margin-left:1em;margin-bottom:2px;border-width:0 0 0px 1px;border-style:dashed;border-color:#000;}'
+	+ '#printInfoWrapperBySoong > ul{border-bottom-width: 1px;margin-left:0;}'
+	+ '#printInfoWrapperBySoong ul li{padding-left:12px;position:relative;color:#929292;}'
+	+ '#printInfoWrapperBySoong ul li:before{content:"...";position:absolute;left:0;line-height:15px;color:#000;}'
+	+ '#' + infoWrapperId + ' ul li span{font-weight:bold;color:#25A19E;margin-right:5px;}';
 
 
 		var generateWrapper = function(){
@@ -25,6 +26,7 @@ ngService.factory('$printInfo', function(){
 			if(infoWrapper.parentNode.nodeName.toLowerCase() != 'body'){
 				document.body.appendChild(infoWrapper);
 			}
+			infoWrapper.setAttribute('draggable', '');
 			return infoWrapper;
 		};
 
@@ -53,25 +55,32 @@ ngService.factory('$printInfo', function(){
 
 			if(strType == 'array' || strType == 'object'){
 				var liEle = document.createElement('li'),
+					spanEle = document.createElement('span'),
 					title = document.createTextNode(key + ':'),
 					ulEle = document.createElement('ul');
-				liEle.appendChild(title);
+				spanEle.appendChild(title);
+				liEle.appendChild(spanEle);
 				liEle.appendChild(ulEle);
-				/*if(parentEle.getAttribute('id') == infoWrapperId){
-					parentEle.appendChild(ulEle);
-				}else{
-					parentEle.appendChild(liEle);
-				}*/
 				parentEle.getAttribute('id') == infoWrapperId ? parentEle.appendChild(ulEle) : parentEle.appendChild(liEle);
 
 				for(var key in content){
 					setWrapperContent(content[key], key, ulEle);
 				}
 			}else{
-				content = key ? key + ': ' + content : content;
-				var liEle = document.createElement('li'),
-					textNode = document.createTextNode(content);
-				liEle.appendChild(textNode);
+				var valueNode = document.createTextNode(content);
+				if(key){
+					var spanEle = document.createElement('span'),
+						textNode = document.createTextNode(key + ':'),
+						valueNode = document.createTextNode(content);
+					spanEle.appendChild(textNode);
+					var item = spanEle;
+				}else{
+					var item = document.createTextNode(key + ':');
+				}
+				
+				var liEle = document.createElement('li');
+				liEle.appendChild(item);
+				liEle.appendChild(valueNode);
 
 				if(parentEle.getAttribute('id') == infoWrapperId){
 					var temp = document.createElement('ul');
@@ -94,8 +103,7 @@ ngService.factory('$printInfo', function(){
 			infoWrapper.parentNode.insertBefore(style, infoWrapper);
 			
 			return this;
-		}
-
+		};
 
 		return {
 			getWrapper: generateWrapper,
