@@ -4,10 +4,10 @@
 'use strict'
 var ngService = angular.module('ngService', []);
 
-ngService.factory('$printInfo', function(){
+ngService.factory('$printInfo', function($compile,$rootScope){
 	var print = function(){
 		var infoWrapperId = 'printInfoWrapperBySoong';
-		var	defaultStyle = 'display:block;position:fixed;right:5px;top:10px;border:2px solid green;height:auto;text-align:left;z-index:999;padding:10px;',
+		var	defaultStyle = 'display:block;position:fixed;left:5px;top:10px;border:2px solid green;height:auto;text-align:left;z-index:999;padding:10px;',
 			humanStyle = '#printInfoWrapperBySoong{background-color: #fff;}'
 	+ '#printInfoWrapperBySoong ul{margin-left:1em;margin-bottom:2px;border-width:0 0 0px 1px;border-style:dashed;border-color:#000;}'
 	+ '#printInfoWrapperBySoong > ul{border-bottom-width: 1px;margin-left:0;}'
@@ -27,6 +27,7 @@ ngService.factory('$printInfo', function(){
 				document.body.appendChild(infoWrapper);
 			}
 			infoWrapper.setAttribute('draggable', '');
+			$compile(infoWrapper)($rootScope);
 			return infoWrapper;
 		};
 
