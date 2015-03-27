@@ -18,10 +18,18 @@
 <p>hello, {{input}};</p>
 <input type="text" ng-model="input2" />
 <p>hello, <span ng-bind="input2"></span>;</p>
-<div ng-test draggable></div>
+<div ng-test draggable style="width:200px;position:relative;"></div>
 <div class="header">header</div>
 <div ng-view></div>
 <div class="footer">footer  copyright</div>
+
+<br/>
+<a href="demo/demo.html">demo html</a>
+<hr/>
+<hello hello-title='title' name='soong' title='song'>{{text}}</hello>
+<br/>
+controller function's test: {{song}}  <br/>
+previous name: {{soong}}
 
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/angular.js"></script>

@@ -9,9 +9,8 @@ angular.module('ngDirective', [])
 	};
 })
 .directive('draggable', function($document) {
-    var startX=0, startY=0, x = 0, y = 0;
     return function(scope, element, attr) {
-		
+		var startX = 0, startY = 0, x = 0, y = 0;
     	element.css({
     		cursor: 'pointer'
       	});
@@ -36,5 +35,25 @@ angular.module('ngDirective', [])
         	$document.unbind('mouseup', mouseup);
       	}
     };
- });
+ })
+.directive('hello', function(){
+	return {
+		restrict: 'E',
+		template: '<div>'
+				+ '<div class="title" ng-click="toggle()">{{title}}</div>'
+				+ '<div class="body" ng-show="showMe" ng-transclude></div>'
+				+ '</div>',
+		transclude: true,
+		replace: true,
+		scope: {
+			title: '=helloTitle'
+		},
+		link: function(scope, element, attrs){
+			scope.showMe = true;
+			scope.toggle = function(){
+				scope.showMe = !scope.showMe;
+			}
+		}
+	}
+});
 
