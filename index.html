@@ -11,10 +11,20 @@
     <title>index</title>
 	
 	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/css/welcome.css">
 </head>
 <body ng-controller="BaseCtrl">
 
-<input type="text" ng-model="input" />
+<div ng-view></div>
+
+<div class="loadingBar">
+    <span class="color-1 purple"></span>
+    <span class="color-2 blue"></span>
+    <span class="color-3 yellow"></span>
+    <span class="color-4 skyColor"></span>
+</div>
+
+<!-- <input type="text" ng-model="input" />
 <p>hello, {{input}};</p>
 <input type="text" ng-model="input2" />
 <p>hello, <span ng-bind="input2"></span>;</p>
@@ -30,7 +40,7 @@
 <br/>
 controller function's test: {{song}}  <br/>
 previous name: {{soong}}
-
+ -->
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/angular.js"></script>
 <script src="js/angular-route.js"></script>

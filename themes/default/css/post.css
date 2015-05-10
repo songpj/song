@@ -1,0 +1,138 @@
+.wrapper{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+
+}
+.sectionWrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*height: 100%;*/
+    width: 100%;
+
+}
+.header{
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+}
+.bodyer{
+    /*position: relative;*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    border: 1px solid gray;
+}
+.footer{
+    /*position: relative;*/
+    left: 0;
+    width: 100%;
+    background: rgb(24, 24, 24);
+    background: rgba(0,0,0,.9);
+    overflow: hidden;
+    display: block;
+    box-sizing: border-box;
+    color: #fff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.photoTitle{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    border-bottom: 1px solid gray;
+}
+.photoTitle h1{
+    text-align: center;
+}
+.photoFrame{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+.photo{
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.odd{
+    width: 85%;
+    height: .9em;
+    left: -100%;
+}
+.even{
+    width: 85%;
+    height: .7em;
+    right: 0%;
+    left: 100%;
+}
+.odd_after{
+    left: 10%;
+}
+.even_after{
+    left: 5%;
+}
+.pseudoBar{
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+.horizontalBar{
+    position: relative;
+    margin-top: 4em;
+}
+.horizontalBar div{
+    font-size: 1.3em;
+    color: #000;
+    position: absolute;
+}
+.horizontalBar.odd div{
+    left: -3.5em;
+    top: -0.3em;
+}
+.horizontalBar.even div{
+    right:  -3.5em;
+    top: -0.3em;
+}
+.red{
+    background: #ae0617;
+}
+.orange{
+    background: #c3880a;
+}
+.yellow{
+    background: #cfc211;
+}
+.green{
+    background: #9aa70e;
+}
+.blue{
+    background: #0b7eb5;
+}
+.indigo{
+    background: #2e3894;
+}
+.purple{
+    background: #490d69;
+}
+.horizontalBar{
+
+}
+

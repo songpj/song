@@ -1,0 +1,429 @@
+/*  gate (ship, sea, coastline...)*/
+.gate{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #46d4d2;
+    overflow: hidden;
+    /*display: none;*/
+}
+.sky{
+    position: relative;
+    width: 100%;
+    height: 38.2%;
+    background: #f897ba;
+}
+.sea{
+    position: relative;
+    width: 100%;
+    height: 61.8%;
+}
+.coastline{
+    position: relative;
+    width: 100%;
+    height: 2%;
+    background: #ece2dc;
+    display: none;
+}
+.beach{
+    position: relative;
+    width: 100%;
+    height: 10%;
+    background: #ffd7ab;
+    display: none;
+}
+.cargoShip{
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+
+    animation-name: 'L2R';
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    -webkit-animation-name: 'L2R';
+    -webkit-animation-duration: 30s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -moz-animation-name: 'L2R';
+    -moz-animation-duration: 30s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -moz-animation-delay: 0s;
+    -o-animation-name: 'L2R';
+    -o-animation-duration: 30s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    -o-animation-delay: 0s;
+    -ms-animation-name: 'L2R';
+    -ms-animation-duration: 30s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -ms-animation-delay: 0s;
+}
+@keyframes L2R{
+    from{left: -20%}
+    50%{left: 40%}
+    to{left: 130%}
+}
+@-webkit-keyframes L2R{
+    from{left: -20%}
+    50%{left: 40%}
+    to{left: 110%}
+}
+@-moz-keyframes L2R{
+    from{left: -20%}
+    50%{left: 40%}
+    to{left: 110%}
+}
+@-ms-keyframes L2R{
+    from{left: -20%}
+    50%{left: 40%}
+    to{left: 110%}
+}
+@-o-keyframes L2R{
+    from{left: -20%}
+    50%{left: 40%}
+    to{left: 110%}
+}
+
+
+.yacht{
+    position: absolute;
+    bottom: 40%;
+    right: 15%;
+    width: 23%;
+}
+.island{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 15%;
+}
+.sun{
+    position: absolute;
+    left: 35%;
+    bottom: 0;
+    width: 30%;
+}
+.sun img,
+.sun svg{
+    bottom: 0;
+    position: absolute;
+}
+.halo{
+    position: absolute;
+    top: 0;
+    width: 34%;
+    left: 31%;
+}
+.umbrella{
+    position: relative;
+    float: left;
+    margin: 0 1em;
+}
+#umbrella-1{
+    /*left: 25%;*/
+    /*top: 10%;*/
+}
+#umbrella-2{
+    /*left: 15%;*/
+    /*top: 5%;*/
+}
+#umbrella-3{
+    /*left: 5%;*/
+    /*top: 5%;*/
+}
+
+.sky{
+    z-index: 25;
+}
+.sea{
+    /*z-index: 1;*/
+}
+.halo{
+    z-index: 2;
+}
+.island{
+    z-index: 3;
+}
+.yacht{
+    z-index: 4;
+}
+.cargoShip{
+    z-index: 5;
+}
+.coastline{
+    z-index: 15;
+}
+.beach{
+    z-index: 17;
+}
+.beach .umbrella{
+    z-index: 18;
+}
+.sailboat{
+    z-index: 26;
+}
+.spoondrift{
+    z-index: 6;
+}
+.umbrellaWrapper{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    display: none;
+}
+.navigation{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    border-left: 3px solid #ece2dc;
+    border-right: 3px solid #ece2dc;
+}
+.navigation ul{
+    position: relative;
+    display: block;
+    text-align: center;
+    height: 100%;
+}
+.navigation ul li{
+    display: inline-block;
+    margin: 0 1em;
+    color: #2C2C2C;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 100%;
+    margin-top: .5em;
+    cursor: pointer;
+}
+.bottle{
+    position: absolute;
+    left: 10%;
+    bottom: 0%;
+    width: 5%;
+}
+.spoondrift{
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    width: 5%;
+}
+.spoondrift img,
+.spoondrift svg{
+    position: relative;
+}
+.spoondrift img:nth-child(2n),
+.spoondrift svg:nth-child(2n){
+    left: 100%;
+}
+.sailboat{
+    position: absolute;
+    top: -15%;
+    left: 40%;
+    width: 5%;
+}
+
+.spoondriftFull{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 400%;
+	height: 85px;
+	z-index: 10;
+	
+	-webkit-animation-name: 'spoondrift';
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    
+	animation-name: 'spoondrift';
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+	
+}
+#spoondriftFront{
+	background: url('../images/wave1.png') repeat-x;
+	-webkit-animation-duration: 120s;
+	animation-duration: 120s;
+}
+#spoondriftBack{
+	height: 100px;
+	background: url('../images/wave2.png') repeat-x;
+	-webkit-animation-duration: 180s;
+	animation-duration: 180s;
+}
+@-webkit-keyframes spoondrift{
+    from{left: 0%}
+    to{left: -300%}
+}
+@keyframes spoondrift{
+    from{left: 0%}
+    to{left: -300%}
+}
+
+
+/*  fix chrome 35- svg problem*/
+.sun{
+    height: 75%;
+}
+
+.halo{
+    height: 59%;
+}
+.spoondrift{
+    height: 5%;
+    bottom: 30%;
+}
+.island{
+    height: 30%;
+}
+.bottle{
+    height: 10%;
+}
+.sailboat {
+    height: 28%;
+}
+.cargoShip{
+    height: 40%;
+}
+.yacht{
+    height: 46%;
+}
+.postAnchor svg{
+    width: 310px;
+}
+@media (max-width: 975px) {
+    .postAnchor svg{
+        width: 310px;
+    }
+}
+@media (max-width: 650px) {
+    .postAnchor svg{
+        display: none;
+    }
+}
+
+
+/*  fix chrome 35- svg different in screen size   */
+
+/*  > 600*800 */
+@media screen and (min-aspect-ratio: 480/800){
+    .sun{
+        height: 23%;
+    }
+    .halo{
+        height: 18%;
+    }
+    .frontPhoto{
+        left: 22%;
+    }
+    .frontPhoto svg{
+        width: 200%;
+    }
+    .backPhoto div.wantedArea{
+        display: none;
+    }
+}
+/*  > 768*1024 (ipad 2,3,mini) || 600*800   */
+@media screen and (min--aspect-ratio: 768/1024){
+    .sun{
+        height: 29%;
+    }
+    .halo{
+        height: 23%;
+    }
+    .frontPhoto {
+        left: 18%;
+    }
+    .frontPhoto svg{
+        width: 155%;
+    }
+    .backPhoto div.wantedArea{
+        width: 80%;
+        height: 40%;
+        margin: 125% 36%;
+    }
+    .backPhoto div.wantedArea{
+        display: block;
+    }
+}
+/*  > 1024*768  */
+@media screen and (min-aspect-ratio: 1024/768){
+    .sun{
+        height: 50%;
+    }
+    .halo{
+        height: 40%;
+    }
+    .frontPhoto {
+        left: 30%;
+    }
+    .frontPhoto svg{
+        width: 131%;
+    }
+    .backPhoto div.wantedArea {
+        width: 80%;
+        height: 43%;
+        margin: 102% 15%;
+    }
+    .backPhoto div.wantedArea{
+        display: block;
+    }
+}
+/*   > 1280*800   */
+@media screen and (min-aspect-ratio: 1280/800){
+    .sun{
+        height: 62%;
+    }
+    .halo{
+        height: 48%;
+    }
+    .frontPhoto {
+        left: 35%;
+    }
+    .frontPhoto svg{
+        width: 115%;
+    }
+    .backPhoto div.wantedArea{
+        width: 80%;
+        height: 56%;
+        margin: 58% 15%;
+    }
+    .backPhoto div.wantedArea{
+        display: block;
+    }
+}
+/*  > 1366*768  */
+@media screen and (min-aspect-ratio: 1366/768){
+    .sun{
+        height: 70%;
+    }
+    .halo{
+        height: 54%;
+    }
+    .frontPhoto {
+        left: 35%;
+    }
+    .frontPhoto svg{
+        width: 100%;
+    }
+    .backPhoto div.wantedArea{
+        width: 75%;
+        height: 53%;
+        margin: 55% 10%;
+    }
+    .backPhoto div.wantedArea{
+        display: block;
+    }
+}
+
+
+
