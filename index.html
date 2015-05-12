@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
 	<link rel="stylesheet" type="text/css" href="themes/default/css/welcome.css">
 </head>
-<body ng-controller="BaseCtrl">
+<body ng-controller="BaseController">
 
 <div ng-view></div>
 
@@ -36,7 +36,7 @@
 <br/>
 <a href="demo/demo.html">demo html</a>
 <hr/>
-<hello hello-title='title' name='soong' title='song'>{{text}}</hello>
+<hello hello-title='title' name='soong' title='song' test="fun()">{{text}}</hello>
 <br/>
 controller function's test: {{song}}  <br/>
 previous name: {{soong}}

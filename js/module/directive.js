@@ -46,12 +46,14 @@ angular.module('ngDirective', [])
 		transclude: true,
 		replace: true,
 		scope: {
-			title: '=helloTitle'
+			title: '=helloTitle',
+			dirFun: '&test'
 		},
 		link: function(scope, element, attrs){
 			scope.showMe = true;
 			scope.toggle = function(){
 				scope.showMe = !scope.showMe;
+				scope.dirFun.call();
 			}
 		}
 	}
