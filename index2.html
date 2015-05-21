@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="ngSoong">
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width,minimum-scale=0.1,maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>index</title>
+	
+	<link rel="stylesheet" type="text/css" href="themes/default/css/common.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/css/welcome.css">
+</head>
+<body ng-controller="BaseController">
+
+<div ng-view></div>
+
+<div class="loadingBar">
+    <span class="color-1 purple"></span>
+    <span class="color-2 blue"></span>
+    <span class="color-3 yellow"></span>
+    <span class="color-4 skyColor"></span>
+</div>
+
+<!-- <input type="text" ng-model="input" />
+<p>hello, {{input}};</p>
+<input type="text" ng-model="input2" />
+<p>hello, <span ng-bind="input2"></span>;</p>
+<div ng-test draggable style="width:200px;position:relative;"></div>
+<div class="header">header</div>
+<div ng-view></div>
+<div class="footer">footer  copyright</div>
+
+<br/>
+<a href="demo/demo.html">demo html</a>
+<hr/>
+<hello hello-title='title' name='soong' title='song' test="fun()">{{text}}</hello>
+<br/>
+controller function's test: {{song}}  <br/>
+previous name: {{soong}}
+ -->
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+
+<script src="js/module/app.js"></script>
+<script src="js/module/directive.js"></script>
+<script src="js/module/service.js"></script>
+<script src="partials/independent/welcome.js"></script>
+</body>
+</html>
