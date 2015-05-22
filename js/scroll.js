@@ -63,6 +63,7 @@
 
             var that = this;
             this.blockScrollFlag = true;
+            var time = parseFloat(this._getStyle(this.wrapper.children[index], 'transitionDuration')) * 1000;   // per page's scroll duration
 
             if(this.currentDirection > 0) {
                 for(var i = index; i <= this.pagesCount; i++ )
@@ -71,12 +72,13 @@
                 for(var i = 0; i <= index + this.currentDirection; i++ )
                     this._addClass('old', this.wrapper.children[i]);
             }
-            this._removeClass('active', this.wrapper.querySelectorAll('.active'));
-            this._addClass('active', this.wrapper.children[index]);
+            setTimeout(function(){
+                that._removeClass('active', that.wrapper.querySelectorAll('.active'));
+                that._addClass('active', that.wrapper.children[index]);
+            }, time);
 
             this.currentPageIndex = index;
 
-            var time = parseFloat(this._getStyle(this.wrapper.children[index], 'transitionDuration')) * 1000;
             setTimeout(function(){
                 that.blockScrollFlag = false;
             }, time);
@@ -178,12 +180,3 @@ function songExtend(source, target){
     }
     return source;
 }
-
-/*function songAddEvent(elem, type, eventHandle){
-    if ( elem.addEventListener ) {
-        elem.addEventListener( type, eventHandle, false );
-
-    } else if ( elem.attachEvent ) {
-        elem.attachEvent( "on" + type, eventHandle );
-    }
-}*/

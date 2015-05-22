@@ -19,6 +19,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
@@ -41,7 +42,89 @@ body{
 }
 
 
-.scrollPiece:nth-child(4n+1){z-index: 4;background: gray;}
-.scrollPiece:nth-child(4n+2){z-index: 3;background: #ffffff;}
+.scrollPiece:nth-child(4n+1){z-index: 4;background-color: #a77dc2}
+.scrollPiece:nth-child(4n+2){z-index: 3;background: #a77dc2;}
 .scrollPiece:nth-child(4n+3){z-index: 2;background: lightgrey;}
 .scrollPiece:nth-child(4n){z-index: 1;background: #fff3f3;}
+
+
+/* #########################  */
+.postColumnR2LScrollSection{
+    background: rgb(251, 251, 196);
+}
+.postColumnR2LScrollSection section{
+    width: 70%;
+    height: 100%;
+    margin: 0 15% 0 10%;
+}
+.postColumnR2LScrollSection .sectionHeader{
+    margin-top: 120px;
+    margin-bottom: 20px;
+}
+.postColumnR2LScrollSection .sectionHeader header{
+    font-size: 3em;
+}
+.postColumnR2LScrollSection .sectionHeader article{
+    width: 40%;
+    font-size: 16px;
+}
+.postColumnR2LScrollSection .postColumn{
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+    opacity: 0;
+    -webkit-transform: translate3d(100px, 0, 0);
+    transform: translate3d(100px,0,0);
+}
+.postColumnR2LScrollSection .post{
+    width: 100%;
+    height: 300px;
+    background: #fff;
+    margin-bottom: 20px;
+
+    -webkit-transform: translate3d(250px, 0, 0);
+    transform: translate3d(250px,0,0);
+}
+.postColumnR2LScrollSection.active .postColumn,
+.postColumnR2LScrollSection.active .post{
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity .7s cubic-bezier(.165,.84,.44,1),-webkit-transform .7s cubic-bezier(.165,.84,.44,1);
+    -moz-transition: opacity .7s cubic-bezier(.165,.84,.44,1),-moz-transform .7s cubic-bezier(.165,.84,.44,1);
+    transition: opacity .7s cubic-bezier(.165,.84,.44,1),transform .7s cubic-bezier(.165,.84,.44,1);
+}
+.postColumnR2LScrollSection .postColumn:nth-child(1),
+.postColumnR2LScrollSection .post:nth-child(1){
+    -webkit-transition-delay: .08s;
+    -moz-transition-delay: .08s;
+    transition-delay: .08s;
+}
+.postColumnR2LScrollSection .postColumn:nth-child(2),
+.postColumnR2LScrollSection .post:nth-child(2){
+    -webkit-transition-delay: .16s;
+    -moz-transition-delay: .16s;
+    transition-delay: .16s;
+}
+.postColumnR2LScrollSection .postColumn:nth-child(3),
+.postColumnR2LScrollSection .post:nth-child(3){
+    -webkit-transition-delay: .24s;
+    -moz-transition-delay: .24s;
+    transition-delay: .24s;
+}
+.postColumnR2LScrollSection .postColumn:nth-child(4),
+.postColumnR2LScrollSection .post:nth-child(4){
+    -webkit-transition-delay: .32s;
+    -moz-transition-delay: .32s;
+    transition-delay: .32s;
+}
+
+
+
+/* #########################  */
+.h_120{height: 120px !important;}
+.h_240{height: 240px !important;}
+.h_360{height: 380px !important;}
