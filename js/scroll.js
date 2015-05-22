@@ -32,7 +32,8 @@
             var support = this._supportOrNot('js');
 
             this._bind('mousewheel DOMMouseScroll', function(event){
-                event.preventDefault();
+                that._preventDefault(event);
+//                event.preventDefault();
                 var mouseOffset = event.wheelDelta || -event.detail;
                 //TODO
                 //initScroll(event, mouseOffset);
@@ -137,7 +138,7 @@
             var elem = ele || this.wrapper;
             var typeArr = type.split(' ');
             for(var key in typeArr){
-                type = typeArr[key].trim();
+                type = typeArr[key];
                 if ( elem.addEventListener ) {
                     elem.addEventListener( type, eventHandle, false );
                 } else if ( elem.attachEvent ) {
@@ -152,6 +153,10 @@
             } else if ( elem.detachEvent ) {
                 elem.detachEvent( "on" + type, eventHandle );
             }
+        },
+        _preventDefault : function(event){
+            if(event && event.preventDefault) event.preventDefault();
+            else window.event.returnValue = false;
         },
         _listOrNot: function(obj){
             if(obj instanceof NodeList || obj instanceof HTMLCollection) return true;
