@@ -40,6 +40,11 @@
                 that._setDirection(mouseOffset);
                 that.goNext();
             }, document);
+
+            setTimeout(function(){
+                that._addClass('active', document.querySelector('.fourBarsAround'));
+            },1000)
+
         },
         goNext : function(){
             this.goPage(this.currentPageIndex - this.currentDirection);
@@ -72,16 +77,14 @@
                 for(var i = 0; i <= index + this.currentDirection; i++ )
                     this._addClass('old', this.wrapper.children[i]);
             }
-            setTimeout(function(){
-                that._removeClass('active', that.wrapper.querySelectorAll('.active'));
-                that._addClass('active', that.wrapper.children[index]);
-            }, time);
-
             this.currentPageIndex = index;
 
             setTimeout(function(){
+                that._removeClass('active', that.wrapper.querySelectorAll('.active'));
+                that._addClass('active', that.wrapper.children[index]);
                 that.blockScrollFlag = false;
             }, time);
+
         },
         _setDirection : function(mouseOffset){
             if(mouseOffset > 0) this.currentDirection = 1;

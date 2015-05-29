@@ -42,7 +42,7 @@ body{
 }
 
 
-.scrollPiece:nth-child(4n+1){z-index: 4;background-color: #a77dc2}
+.scrollPiece:nth-child(4n+1){z-index: 4;background-color: #fff;}
 .scrollPiece:nth-child(4n+2){z-index: 3;background: #a77dc2;}
 .scrollPiece:nth-child(4n+3){z-index: 2;background: lightgrey;}
 .scrollPiece:nth-child(4n){z-index: 1;background: #fff3f3;}
@@ -81,6 +81,8 @@ body{
     height: 300px;
     background: #fff;
     margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
 
     -webkit-transform: translate3d(250px, 0, 0);
     transform: translate3d(250px,0,0);
@@ -122,9 +124,131 @@ body{
     transition-delay: .32s;
 }
 
+.postColumnR2LScrollSection .post img{
+    width: 100%;
+    -moz-transition: -moz-transform 0.5s ease 0s, opacity 0.5s ease 0s;
+    -webkit-transition: -webkit-transform 0.5s ease 0s, opacity 0.5s ease 0s;
+    transition: transform 0.5s ease 0s, opacity 0.5s ease 0s;
+}
+.postColumnR2LScrollSection .post:hover img{
+    -moz-transform: -moz-scale3d(1.2, 1.2, 1);
+    -webkit-transform: -webkit-scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.2, 1.2, 1);
+}
 
 
 /* #########################  */
 .h_120{height: 120px !important;}
 .h_240{height: 240px !important;}
 .h_360{height: 380px !important;}
+
+
+.fourBarsAround{
+    display: flex;
+    justify-content: space-between;
+    background: -webkit-radial-gradient(ellipse, #f1f1f1, #f1f1f1, #f1f1f1,#C4C4C4);
+}
+.fourBarsAround .column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fourBarsAround .column:first-child{
+    flex: 3 1 200px;
+}
+.fourBarsAround .column:last-child{
+    flex: 1 3 50px;
+}
+.fourBarsAround .left{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 50px;
+    overflow: hidden;
+    background-color: transparent;
+}
+.fourBarsAround .top{
+    flex: 5 4 auto;
+}
+.fourBarsAround .bottom{
+    flex: 4 5 auto;
+}
+.fourBarsAround .right{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform-origin: 50% 0;
+    transition: transform .4s ease 0s;
+}
+.fourBarsAround .top,
+.fourBarsAround .bottom,
+.fourBarsAround .left{
+    position: relative;
+    overflow: hidden;
+}
+.fourBarsAround .top div,
+.fourBarsAround .bottom div{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.fourBarsAround .top div,
+.fourBarsAround .left div,
+.fourBarsAround .bottom div,
+.fourBarsAround .right{
+    background: #000;
+}
+.fourBarsAround .left div{
+    background: #000;
+}
+.fourBarsAround .top div{
+    transform-origin: 100% 50%;
+    transition: transform .3s ease .4s;
+}
+.fourBarsAround .bottom div{
+    transition: transform .3s ease .7s;
+
+    transform: scale3d(1, 1, 1);
+    transform-origin: 50% 0%;
+}
+.fourBarsAround .left div{
+    flex-grow: 1;
+    transform-origin: 100% 50%;
+    transform: scale3d(1, 1, 1);
+    transition: transform .3s ease 1s;
+}
+.fourBarsAround .left p{
+    background-color: #000;
+    padding: 0 1vw;
+    color: #fff;
+    font-size: 1.5vw;
+}
+.fourBarsAround .right,
+.fourBarsAround .top div,
+.fourBarsAround .bottom div,
+.fourBarsAround .left div{
+    transform: scale3d(1, 1, 1);
+}
+.fourBarsAround.active .right{
+    transform: scale3d(1, 0, 1);
+}
+.fourBarsAround.active .top div{
+    transform: scale3d(0, 1, 1);
+}
+.fourBarsAround.active .bottom div{
+    transform: scale3d(1, 0, 1);
+}
+.fourBarsAround.active .left div{
+    transform: scale3d(0, 1, 1);
+}
+.fourBarsAround .hideTitle{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 12%;
+    font-size: 5em;
+    color: #000;
+    font-family: initial;
+}
